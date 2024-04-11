@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_hrm_company_form" model="ir.ui.view">
+        <field name="name">company.hrm.form</field>
+        <field name="model">company.hrm</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet> 
+                    <group>
+                        <group>
+                            <group>
+                                <field name="name" placeholder="Your company"/>
+                            </group>
+                            <notebook>
+                                <page string="General Infomartion">
+                                
+                                    <group>
+                                        <group>
+                                            <field name="contact" placeholder="Your contact"/>
+                                            <field name="address" placeholder="Street ..."/>
+                                            <field name="city" placeholder="City"/>
+                                            <field name="state" placeholder="State"/>
+                                            <field name="zip" placeholder="ZIP"/>
+                                            <field name="country"/>
+                                            <field name="tax_id"/>
+                                            <field name="company_id"/>
+                                            <field name="currency" />
+                                        </group>
+                                        <group>
+                                            <field name="phone"/>
+                                            <field name="mobile"/>
+                                            <field name="email"/>
+                                            <field name="website"/>
+                                            <field name="parent_company"/>
+                                            <field name="email_domain"/>
+                                            <field name="color"/>
+                                        </group>
+                                    </group>
+                                    
+                                </page>
+                                <page string="Branches">
+                                    <field name="branch_ids">
+                                        <tree> 
+                                            <field name="name"/>
+                                            <field name="branches" />
+                                        </tree>
+                                    </field>
+                                </page>
+                            </notebook> 
+                        </group>
+                        <group>
+                            <div class="d-flex">
+                                <button name="action_send_msg" type="object" string="Send Message" class="btn btn-primary fixed-width-button" />
+                                <button name="action_log_note" type="object" string="Log Note" confirm="Are you sure ?"/>
+                            </div>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hrm_company_tree" model="ir.ui.view">
+        <field name="name">company.hrm.tree</field>
+        <field name="model">company.hrm</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <!-- <field name="branch"/> -->
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_hrm_company" model="ir.actions.act_window">
+        <field name="name">Hrm Company</field> <!-- Tên action là gì -->
+        <field name="type">ir.actions.act_window</field> <!-- Loại action gì -->
+        <field name="res_model">company.hrm</field> <!-- Kết nối với db nào -->
+        <field name="view_mode">tree,form</field> <!-- View nào (Kanban, list, form, ...) -->
+        <field name="view_id" ref="view_hrm_company_tree"/>
+    </record>
+</odoo>

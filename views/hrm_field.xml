@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hrm_field_form" model="ir.ui.view">
+        <field name="name">field.hrm.form</field>
+        <field name="model">field.hrm</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet> 
+                    <group>
+                        <group>
+                            <group>
+                                <field name="field_name"/>
+                                <field name="field_lable"/>
+                            </group>
+                            <group>
+                                <field name="field_type"/>
+                                <field name="field_help"/>
+                            </group>
+                            <group>
+                                <field name="field_model" />
+                            </group>
+                            <notebook>
+                                <page string="Properties">
+                                    <group>
+                                        <field name="require"/>
+                                        <field name="readonly"/>
+                                        <field name="stored"/>
+                                        <field name="indexed"/>
+                                        <field name="copied" />   
+                                    </group>
+                                    
+                                </page>
+                                <page string="Access Right">
+
+                                </page>
+                                <page string="Miscellaneous">
+                                
+                                </page>
+                            </notebook> 
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hrm_field_tree" model="ir.ui.view">
+        <field name="name">field.hrm.tree</field>
+        <field name="model">field.hrm</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="field_name"/>
+                <field name="field_lable"/>
+                <field name="field_model"/>
+                <field name="field_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_hrm_field" model="ir.actions.act_window">
+        <field name="name">Hrm field</field> 
+        <field name="type">ir.actions.act_window</field> 
+        <field name="res_model">field.hrm</field> 
+        <field name="view_mode">tree,form</field> 
+
+    </record>
+
+</odoo>

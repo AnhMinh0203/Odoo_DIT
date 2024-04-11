@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_hrm_root" 
+            name="HRM" 
+            sequence="10"/>
+
+        <menuitem id="menu_hrm_company" 
+                name="Company" 
+                parent="menu_hrm_root"
+                action = "action_hrm_company"
+                sequence="10"/>
+
+</odoo>
